@@ -261,7 +261,7 @@ export function Hero({ darkMode }: HeroProps) {
             transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-<div className="float-photo relative" style={{ width: 650, height: 400 }}>           {/* Outer card frame — matches About card style */}
+<div className="float-photo relative" className="float-photo relative w-full max-w-[650px] aspect-[16/10]">           {/* Outer card frame — matches About card style */}
               <div
                 className="absolute inset-0 rounded-[2.5rem]"
                 style={{
