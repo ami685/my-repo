@@ -6,42 +6,36 @@ interface AchievementsProps {
 
 const achievements = [
   {
-    icon: "🎯",
     title: "Conception pédagogique",
     description:
       "Conception de dispositifs de formation centrés apprenant, alignés sur des objectifs mesurables.",
     color: "blue",
   },
   {
-    icon: "🧠",
     title: "Approches théoriques maîtrisées",
     description:
       "Mobilisation de cadres comme ADDIE, CoI et Bloom pour guider les décisions pédagogiques.",
     color: "purple",
   },
   {
-    icon: "🚀",
     title: "Déploiement LMS",
     description:
       "Structuration et pilotage de parcours sur Moodle et Google Classroom avec suivi des acquis.",
     color: "green",
   },
   {
-    icon: "🎬",
     title: "Médiatisation pédagogique",
     description:
       "Production de capsules vidéo et supports d'apprentissage favorisant clarté et engagement.",
     color: "orange",
   },
   {
-    icon: "🧩",
     title: "Scénarisation de projets",
     description:
       "Conception de projets variés (VR, leçon IA, capsules) adaptés à des contextes de formation divers.",
     color: "red",
   },
   {
-    icon: "🤝",
     title: "Accompagnement et collaboration",
     description:
       "Travail en équipe et coordination avec parties prenantes pour livrer des expériences d'apprentissage efficaces.",

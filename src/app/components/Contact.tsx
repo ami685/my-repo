@@ -162,7 +162,7 @@ export function Contact({ darkMode }: ContactProps) {
             <div className="mt-10 p-5 rounded-2xl border border-dashed border-blue-200 bg-gradient-to-br from-blue-50/50 to-transparent"
               style={darkMode ? { borderColor: "rgba(59,130,246,0.2)", background: "rgba(59,130,246,0.04)" } : {}}>
               <p className={`text-sm italic ${darkMode ? "text-gray-500" : "text-gray-500"}`}>
-                "Un bon design pédagogique ne se voit pas, il se vit." 🇲🇦
+                " Non point enseigner la vertu ni la vérité, mais garantir le cœur du vice et l'esprit de l'erreur." Jean Jack Rousseau
               </p>
             </div>
           </motion.div>
