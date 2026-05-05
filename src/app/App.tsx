@@ -10,7 +10,7 @@ import { Achievements } from "./components/Achievements";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { useLang } from "./i18n/useLang";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const { lang, toggleLang } = useLang();
@@ -34,6 +34,7 @@ export default function App() {
       <Achievements darkMode={darkMode} lang={lang} />
       <Contact darkMode={darkMode} lang={lang} />
       <Footer darkMode={darkMode} lang={lang} />
+      <Analytics />
     </div>
   );
 }
