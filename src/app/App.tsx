@@ -10,12 +10,12 @@ import { Achievements } from "./components/Achievements";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { useLang } from "./i18n/useLang";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const { lang, toggleLang } = useLang();
 
-  // Smooth scroll globally
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
@@ -24,7 +24,9 @@ export default function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "bg-gray-950" : "bg-white"}`}>
+
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} lang={lang} toggleLang={toggleLang} />
+
       <Hero darkMode={darkMode} lang={lang} />
       <About darkMode={darkMode} lang={lang} />
       <Skills darkMode={darkMode} lang={lang} />
@@ -34,6 +36,9 @@ export default function App() {
       <Achievements darkMode={darkMode} lang={lang} />
       <Contact darkMode={darkMode} lang={lang} />
       <Footer darkMode={darkMode} lang={lang} />
+
+      {/* ✅ مهم: Analytics هنا */}
+      <Analytics />
     </div>
   );
 }
