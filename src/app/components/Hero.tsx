@@ -1,11 +1,15 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Download, ArrowRight, Mail, ChevronDown } from "lucide-react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 import heroVideo from "@/assets/HEROOOO.mp4";
+
 interface HeroProps {
   darkMode: boolean;
+  lang: Language;
 }
 
-export function Hero({ darkMode }: HeroProps) {
+export function Hero({ darkMode, lang }: HeroProps) {
   const { scrollY } = useScroll();
   const yParallax = useTransform(scrollY, [0, 500], [0, -60]);
   const opacityParallax = useTransform(scrollY, [0, 400], [1, 0]);

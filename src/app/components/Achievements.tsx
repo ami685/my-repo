@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface AchievementsProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 const achievements = [
@@ -52,7 +55,7 @@ const colorMap: Record<string, { bg: string; bgDark: string; text: string; textD
   teal: { bg: "bg-teal-50", bgDark: "bg-teal-900/20", text: "text-teal-600", textDark: "text-teal-400", border: "border-teal-100", borderDark: "border-teal-900/40" },
 };
 
-export function Achievements({ darkMode }: AchievementsProps) {
+export function Achievements({ darkMode, lang }: AchievementsProps) {
   return (
     <section
       id="achievements"

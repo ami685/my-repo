@@ -9,9 +9,11 @@ import { Certifications } from "./components/Certifications";
 import { Achievements } from "./components/Achievements";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-
+import { useLang } from "./i18n/useLang";
+import { Analytics } from "@vercel/analytics/next"
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const { lang, toggleLang } = useLang();
 
   // Smooth scroll globally
   useEffect(() => {
@@ -22,16 +24,16 @@ export default function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "bg-gray-950" : "bg-white"}`}>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Hero darkMode={darkMode} />
-      <About darkMode={darkMode} />
-      <Skills darkMode={darkMode} />
-      <Experience darkMode={darkMode} />
-      <Projects darkMode={darkMode} />
-      <Certifications darkMode={darkMode} />
-      <Achievements darkMode={darkMode} />
-      <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} lang={lang} toggleLang={toggleLang} />
+      <Hero darkMode={darkMode} lang={lang} />
+      <About darkMode={darkMode} lang={lang} />
+      <Skills darkMode={darkMode} lang={lang} />
+      <Experience darkMode={darkMode} lang={lang} />
+      <Projects darkMode={darkMode} lang={lang} />
+      <Certifications darkMode={darkMode} lang={lang} />
+      <Achievements darkMode={darkMode} lang={lang} />
+      <Contact darkMode={darkMode} lang={lang} />
+      <Footer darkMode={darkMode} lang={lang} />
     </div>
   );
 }

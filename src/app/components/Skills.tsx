@@ -1,9 +1,12 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface SkillsProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 const skillCategories = [
@@ -156,7 +159,7 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-export function Skills({ darkMode }: SkillsProps) {
+export function Skills({ darkMode, lang }: SkillsProps) {
   const dk = darkMode;
 
   return (

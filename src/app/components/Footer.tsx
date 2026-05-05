@@ -1,8 +1,11 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface FooterProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 const navLinks = [
@@ -14,7 +17,7 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-export function Footer({ darkMode }: FooterProps) {
+export function Footer({ darkMode, lang }: FooterProps) {
   const handleNav = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });

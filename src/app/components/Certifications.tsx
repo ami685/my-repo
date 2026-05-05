@@ -1,9 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Award, ExternalLink, Hash } from "lucide-react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface CertificationsProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 interface CertificationItem {
@@ -64,7 +67,7 @@ const certifications: CertificationItem[] = [
   },
 ];
 
-export function Certifications({ darkMode }: CertificationsProps) {
+export function Certifications({ darkMode, lang }: CertificationsProps) {
   const filterOptions = useMemo(() => {
     const tags = Array.from(new Set(certifications.map((c) => c.filterTag))).sort((a, b) =>
       a.localeCompare(b)

@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Github, Linkedin, Download, Send, CheckCircle } from "lucide-react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface ContactProps {
   darkMode: boolean;
+  lang: Language;
 }
 
-export function Contact({ darkMode }: ContactProps) {
+export function Contact({ darkMode, lang }: ContactProps) {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);

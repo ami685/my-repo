@@ -11,9 +11,12 @@ import {
   Play,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface ProjectsProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 interface Project {
@@ -168,11 +171,11 @@ const projects: Project[] = [
     title: "06 — Cours Moodle",
     description: "Conception et structuration d'un cours complet sur Moodle.",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1080&q=80",
+      "https://www.freelearningtools.org/wp-content/uploads/2024/04/Moodle_Orange.png",
     tags: ["CoI", "ADDIE", "Bloom", "Terminé"],
     category: "Conception e-learning",
-    color: "purple",
-    liveDemo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    color: "orange",
+    liveDemo: "https://jumpshare.com/embed/MTuoeckQvru1ZIFeN0Eg",
     details: {
       overview:
         "Parcours Moodle structuré par modules, activités et évaluations pour soutenir la progression de l'apprenant.",
@@ -209,6 +212,29 @@ liveDemo: "https://jumpshare.com/embed/vSYL2PzkmRI1xOFZf9wT",
         "Favoriser l’apprentissage actif via TP et quiz",
       ],
       architecture: ["CoI", "ADDIE", "Bloom"],
+      challenges: ["Rythme de publication", "Engagement durable"],
+      outcome: "Terminé",
+    },
+  },
+  {
+    title: "08 — E-Tech Financement",
+    description: "Capsule vidéo pédagogique présentant le programme E-Tech Financement, ses objectifs, ses modalités et ses opportunités pour les porteurs de projets innovants.",
+    image:
+      "https://i.ibb.co/3YSz3p2d/map-lying-wooden-table.jpg",
+    tags: ["Innovation", "Financement", "Entrepreneuriat", "Terminé"],
+    category: "Conception e-learning",
+    color: "blue",
+liveDemo: "https://jumpshare.com/embed/MTuoeckQvru1ZIFeN0Eg",
+ details: {
+      overview:
+        "Capsule vidéo pédagogique présentant le programme E-Tech Financement, ses objectifs, ses modalités et ses opportunités pour les porteurs de projets innovants. La capsule combine des éléments visuels attrayants, une narration claire et des exemples concrets pour expliquer les différentes étapes du programme et encourager les entrepreneurs à y participer.",
+      features: [
+        "Présentation claire du dispositif E-Tech",
+        "Design visuel moderne et engageant",
+        "Accessibilité pour différents profils",
+        "Structuration pédagogique (problème → solution → opportunités)",
+      ],
+      architecture: ["CoI", "ADDIE", "UX learning"],
       challenges: ["Rythme de publication", "Engagement durable"],
       outcome: "Terminé",
     },
@@ -566,7 +592,7 @@ function ProjectModal({
   );
 }
 
-export function Projects({ darkMode }: ProjectsProps) {
+export function Projects({ darkMode, lang }: ProjectsProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (

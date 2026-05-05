@@ -1,9 +1,12 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface ExperienceProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 const experiences = [
@@ -130,7 +133,7 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-export function Experience({ darkMode }: ExperienceProps) {
+export function Experience({ darkMode, lang }: ExperienceProps) {
   const dk = darkMode;
 
   return (

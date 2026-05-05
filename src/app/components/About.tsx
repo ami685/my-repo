@@ -1,9 +1,12 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface AboutProps {
   darkMode: boolean;
+  lang: Language;
 }
 
 const education = [
@@ -86,7 +89,7 @@ function FadeIn({
   );
 }
 
-export function About({ darkMode }: AboutProps) {
+export function About({ darkMode, lang }: AboutProps) {
   const dk = darkMode;
 
   return (

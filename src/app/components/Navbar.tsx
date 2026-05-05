@@ -1,24 +1,28 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { t } from "../i18n/translations";
+import type { Language } from "../i18n/translations";
 
 interface NavbarProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  lang: Language;
+  toggleLang: () => void;
 }
 
-const navLinks = [
-  { label: "Profil", href: "#about" },
-  { label: "Compétences", href: "#skills" },
-  { label: "Parcours", href: "#experience" },
-  { label: "Projets", href: "#projects" },
-  { label: "Formation", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
-];
-
-export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
+export function Navbar({ darkMode, toggleDarkMode, lang, toggleLang }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t(lang, 'nav', 'profile'), href: "#about" },
+    { label: t(lang, 'nav', 'skills'), href: "#skills" },
+    { label: t(lang, 'nav', 'experience'), href: "#experience" },
+    { label: t(lang, 'nav', 'projects'), href: "#projects" },
+    { label: t(lang, 'nav', 'certifications'), href: "#certifications" },
+    { label: t(lang, 'nav', 'contact'), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -74,6 +78,8 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+         
+          {/* Dark Mode Toggle */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -94,7 +100,7 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             whileTap={{ scale: 0.97 }}
             className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
           >
-            Collaborer
+            {t(lang, 'nav', 'collaborate')}
           </motion.a>
 
           {/* Mobile menu toggle */}
@@ -136,7 +142,7 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                 onClick={() => handleNav("#contact")}
                 className="mt-2 px-4 py-3 bg-blue-600 text-white rounded-lg text-sm font-medium"
               >
-                Collaborer
+                {t(lang, 'nav', 'collaborate')}
               </button>
             </div>
           </motion.div>
