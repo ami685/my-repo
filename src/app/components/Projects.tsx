@@ -240,8 +240,7 @@ liveDemo: "https://jumpshare.com/embed/MTuoeckQvru1ZIFeN0Eg",
     },
   },
   {
-    title: "Système de gestion d’apprentissage en ligne (LMS) ",
-
+    title: "09 — Système de gestion d’apprentissage en ligne (LMS) ",
 
 
 description:
@@ -288,6 +287,51 @@ details: {
     "Projet LMS personnalisé avec une base solide pour une plateforme e-learning évolutive et professionnelle.",
 },
   },
+  {
+  title: "10 — Mystery Breakout — Serious Game",
+  description: "Escape game interactif basé sur la résolution d’énigmes mathématiques et logiques.",
+
+  image:
+    "https://69f610f3a0be0e562863fe85.imgix.net/gamification-concept-with-woman-controller.jpg?w=4222&h=3292&rect=0%2C0%2C4222%2C3292",
+
+  tags: ["Serious Game", "Game Design", "Maths", "Storytelling", "Terminé"],
+
+  category: "Conception e-learning",
+
+  color: "purple",
+
+  liveDemo: "https://view.genially.com/69fb8844176d2c69f32bf477",
+
+  details: {
+    overview:
+      "Mystery Breakout est un serious game éducatif immersif où l’apprenant incarne un enquêteur chargé de résoudre une disparition mystérieuse. Le jeu combine narration interactive, énigmes mathématiques et exploration progressive d’un univers sombre et captivant.",
+
+    features: [
+      "Scénario interactif basé sur une enquête",
+      "Énigmes mathématiques progressives",
+      "Système de clés et déblocage de niveaux",
+      "Immersion narrative (archives, forêt, maison)",
+      "Feedback immédiat et système d’indices"
+    ],
+
+    architecture: [
+      "Narration interactive",
+      "Gamification pédagogique",
+      "Progression par niveaux",
+      "Apprentissage basé sur la résolution de problèmes"
+    ],
+
+    challenges: [
+      "Créer une immersion narrative cohérente",
+      "Équilibrer difficulté des énigmes",
+      "Maintenir engagement utilisateur",
+      "Intégration storytelling + pédagogie"
+    ],
+
+    outcome:
+      "Serious game complet développé et intégré dans un parcours d’apprentissage interactif."
+  }
+}
 ];
 
 const colorMap: Record<
