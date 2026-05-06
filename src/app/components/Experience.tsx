@@ -9,6 +9,7 @@ interface ExperienceProps {
   lang: Language;
 }
 
+
 const experiences = [
   {
     company: "Projet e-learning collaboratif",
@@ -134,6 +135,8 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 export function Experience({ darkMode, lang }: ExperienceProps) {
+  return null;
+
   const dk = darkMode;
 
   return (
