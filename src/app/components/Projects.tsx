@@ -239,6 +239,55 @@ liveDemo: "https://jumpshare.com/embed/MTuoeckQvru1ZIFeN0Eg",
       outcome: "Terminé",
     },
   },
+  {
+    title: "Système de gestion d’apprentissage en ligne (LMS) ",
+
+
+
+description:
+  "Adaptation et personnalisation d’un template LMS PHP pour créer une plateforme e-learning moderne avec gestion des cours, dashboards et expérience utilisateur optimisée.",
+
+image:
+  "https://cdn.elearningindustry.com/wp-content/uploads/2024/12/A-Step-By-Step-Guide-To-Successfully-Implementing-A-Corporate-LMS.jpg",
+
+tags: ["E-learning", "LMS", "Web Development", "UI/UX", "Terminé"],
+
+category: "Conception e-learning",
+
+color: "blue",
+
+liveDemo: "https://jumpshare.com/embed/izvFKrys5l7FpNnNVcHA",
+
+details: {
+  overview:
+    "Ce projet consiste à adapter un template LMS PHP moderne en une plateforme e-learning personnalisée. L’objectif est de transformer un système statique en une interface pédagogique interactive permettant la gestion de cours, utilisateurs et contenus éducatifs.",
+
+  features: [
+    "Interface de cours (listes, détails, progression)",
+    "Dashboards étudiant et formateur",
+    "Système d’authentification (structure préparée)",
+    "Pages de gestion des contenus pédagogiques",
+    "Mode sombre et design responsive",
+  ],
+
+  architecture: [
+    "HTML / CSS / JavaScript",
+    "PHP 8",
+    "Bootstrap 5",
+    "SCSS (custom theme)",
+    "Gulp automation",
+  ],
+
+  challenges: [
+    "Personnalisation d’un template complexe",
+    "Structuration des pages LMS",
+    "Préparation à l’intégration backend",
+  ],
+
+  outcome:
+    "Projet LMS personnalisé avec une base solide pour une plateforme e-learning évolutive et professionnelle.",
+},
+  },
 ];
 
 const colorMap: Record<
