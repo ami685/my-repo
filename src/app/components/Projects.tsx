@@ -331,6 +331,49 @@ details: {
     outcome:
       "Serious game complet développé et intégré dans un parcours d’apprentissage interactif."
   }
+},
+ {
+  title: "11 — Loop Pédagogie — Blog de réflexion pédagogique",
+  description:     "Loop Pédagogie est un blog personnel où je partage des articles de réflexion sur la pédagogie, l’apprentissage en ligne et l’expérience utilisateur dans les environnements éducatifs.",
+
+  image:
+    "https://www.chitkara.edu.in/blogs/wp-content/uploads/2023/09/Blogging-in-Digital-Marketing.jpg",
+
+  tags: ["Blog", "Pédagogie", "E-learning", "Réflexion"],
+
+  category: "Blog pédagogique",
+
+  color: "purple",
+
+  liveDemo: "https://jumpshare.com/embed/oL1CTAdjZBMXTe6crkvU",
+
+  details: {
+    overview:
+    "Loop Pédagogie est un blog personnel dédié à la réflexion sur l’éducation moderne et le digital learning, permettant de structurer et partager des idées pédagogiques de manière claire et accessible.",
+
+    features: [
+      "Interface de blog simple et lisible",
+      "Navigation fluide entre les articles",
+      "Organisation par catégories pédagogiques",
+      "Design responsive adapté à tous les supports",
+      "Expérience de lecture optimisée"
+    ],
+    architecture: [
+      "Gestion de contenu éditorial",
+      "Structuration des articles pédagogiques",
+      "Organisation par thématiques",
+      "Approche UX centrée lecteur"
+    ],
+
+    challenges: [
+      "Structurer un contenu pédagogique cohérent",
+      "Créer une identité éditoriale claire",
+      "Maintenir une expérience de lecture fluide"
+    ],
+
+    outcome:
+      "Loop Pédagogie est devenu un espace de réflexion pédagogique structuré, permettant de partager des articles sur l’éducation et le digital learning."
+  }
 }
 ];
 
