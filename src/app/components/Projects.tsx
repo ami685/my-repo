@@ -374,6 +374,54 @@ details: {
     outcome:
       "Loop Pédagogie est devenu un espace de réflexion pédagogique structuré, permettant de partager des articles sur l’éducation et le digital learning."
   }
+},
+{
+  title: "12 — Formation de Réduction du Gaspillage en Entreprise",
+
+  description:
+    "Formation e-learning interactive conçue pour sensibiliser les employés et managers aux méthodes pratiques de réduction du gaspillage en entreprise et à l’amélioration de la performance organisationnelle.",
+
+  image:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr75jTTZ7Jkk7xPOwPmOdCoUz8rcRcRG1cyg&s",
+
+  tags: ["Articulaate storyline", "Formation", "Pédagogie", "Performance", "Entreprise"],
+
+  category: "Formation e-learning",
+
+  color: "green",
+
+  liveDemo: "https://jumpshare.com/embed/KFkHHYAtLfj1VQnOFwqg",
+
+  details: {
+    overview:
+      "Cette formation e-learning vise à fournir une compréhension claire des différentes formes de gaspillage en entreprise et à proposer des méthodes concrètes pour améliorer la performance organisationnelle à travers des pratiques simples et applicables.",
+
+    features: [
+      "Module d’introduction aux gaspillages en entreprise",
+      "Analyse des différents types de gaspillage (temps, ressources, énergie, coûts)",
+      "Méthodes pratiques de réduction du gaspillage",
+      "Quiz interactifs et mises en situation",
+      "Approche pédagogique progressive et structurée"
+    ],
+
+    architecture: [
+      "Conception pédagogique en modules",
+      "Structuration du contenu en scénarios d’apprentissage",
+      "Intégration de quiz et évaluations",
+      "Design orienté expérience utilisateur",
+      "articulaate storyline"
+    ],
+
+    challenges: [
+      "Simplifier des concepts de gestion et performance",
+      "Rendre le contenu engageant et interactif",
+      "Adapter la formation à un format e-learning court",
+      "Assurer une progression pédagogique claire"
+    ],
+
+    outcome:
+      "La formation permet aux apprenants de comprendre et d’appliquer des méthodes concrètes pour réduire le gaspillage en entreprise et améliorer la performance globale."
+  }
 }
 ];
 

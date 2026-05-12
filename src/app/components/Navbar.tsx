@@ -15,14 +15,13 @@ export function Navbar({ darkMode, toggleDarkMode, lang, toggleLang }: NavbarPro
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navLinks = [
-    { label: t(lang, 'nav', 'profile'), href: "#about" },
-    { label: t(lang, 'nav', 'skills'), href: "#skills" },
-    { label: t(lang, 'nav', 'experience'), href: "#experience" },
-    { label: t(lang, 'nav', 'projects'), href: "#projects" },
-    { label: t(lang, 'nav', 'certifications'), href: "#certifications" },
-    { label: t(lang, 'nav', 'contact'), href: "#contact" },
-  ];
+const navLinks = [
+  { label: "Profil", href: "#about" },
+  { label: "Compétences", href: "#skills" },
+    { label: "Projets", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Contact", href: "#contact" },
+];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -102,7 +101,6 @@ export function Navbar({ darkMode, toggleDarkMode, lang, toggleLang }: NavbarPro
           >
             {t(lang, 'nav', 'collaborate')}
           </motion.a>
-
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

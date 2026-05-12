@@ -38,7 +38,7 @@ const education = [
 const infoItems = [
   {
     label: "Localisation",
-    value: "Maroc 🇲🇦",
+    value: "Maroc ",
     iconPath: "M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
   },
   {
@@ -54,7 +54,7 @@ const infoItems = [
 ];
 
 const stats = [
-  { value: "5+", label: "ans d'expérience" },
+  { value: "3+", label: "ans d'expérience" },
   { value: "20+", label: "projets e-learning" },
   { value: "3", label: "langues maîtrisées" },
 ];
