@@ -1,8 +1,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { Download, ArrowRight, Mail, ChevronDown } from "lucide-react";
-import { t } from "../i18n/translations";
+import { ArrowRight, Mail, ChevronDown, Play } from "lucide-react";
 import type { Language } from "../i18n/translations";
+import { useState, useRef, useCallback } from "react";
 import heroVideo from "@/assets/HEROOOO.mp4";
+import heroPoster from "@/assets/hero-thumb.jpg";
 
 interface HeroProps {
   darkMode: boolean;
@@ -11,27 +12,30 @@ interface HeroProps {
 
 export function Hero({ darkMode, lang }: HeroProps) {
   const { scrollY } = useScroll();
-  const yParallax = useTransform(scrollY, [0, 500], [0, -60]);
   const opacityParallax = useTransform(scrollY, [0, 400], [1, 0]);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoState, setVideoState] = useState<"idle" | "loading" | "playing">("idle");
 
   const handleScroll = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const loadAndPlay = useCallback(() => {
+    const video = videoRef.current;
+    if (!video || videoState === "playing") return;
+
+    setVideoState("loading");
+    video.src = heroVideo;
+    video.load();
+    video
+      .play()
+      .then(() => setVideoState("playing"))
+      .catch(() => setVideoState("idle"));
+  }, [videoState]);
+
   const dk = darkMode;
-
-  const stats = [
-    { value: "8+", label: "Projets pédagogiques" },
-    { value: "3", label: "LMS maîtrisés" },
-    { value: "B2", label: "Anglais pro" },
-  ];
-
-  const chips = [
-    { label: "Design pédagogique", top: "10%", left: "-2%", delay: 0.9 },
-    { label: "LMS & Scénarisation", top: "42%", right: "-2%", left: "auto", delay: 1.05 },
-    { label: "Formation & e-learning", bottom: "-5%", left: "50%", delay: 1.2, centered: true },
-  ];
 
   return (
     <section
@@ -56,6 +60,11 @@ export function Hero({ darkMode, lang }: HeroProps) {
           100% { transform: scale(1.8); opacity: 0; }
         }
         .ping-dot { animation: ping-dot 1.8s ease-out infinite; }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        .spinner { animation: spin 0.9s linear infinite; }
       `}</style>
 
       {/* Moroccan tricolor top bar */}
@@ -63,11 +72,12 @@ export function Hero({ darkMode, lang }: HeroProps) {
         aria-hidden
         className="absolute top-0 left-0 right-0 h-[3px]"
         style={{
-          background: "linear-gradient(90deg, #dc2626 0%, #dc2626 33%, #2563eb 33%, #2563eb 66%, #16a34a 66%, #16a34a 100%)",
+          background:
+            "linear-gradient(90deg, #dc2626 0%, #dc2626 33%, #2563eb 33%, #2563eb 66%, #16a34a 66%, #16a34a 100%)",
         }}
       />
 
-      {/* Subtle background geometry — matches About section */}
+      {/* Background geometry */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -135,8 +145,14 @@ export function Hero({ darkMode, lang }: HeroProps) {
                   color: dk ? "#64748b" : "#94a3b8",
                 }}
               >
-                {/* Map pin icon inline */}
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" /><circle cx="12" cy="10" r="3" /></svg>
+                <svg
+                  width="11" height="11" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" strokeWidth="2.5"
+                  strokeLinecap="round" strokeLinejoin="round"
+                >
+                  <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 Maroc
               </div>
             </motion.div>
@@ -244,34 +260,31 @@ export function Hero({ darkMode, lang }: HeroProps) {
                 <Mail size={15} />
                 Me contacter
               </motion.button>
-
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats row (preserved) */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
               className="flex gap-8"
-            >
-            
-            </motion.div>
+            />
           </div>
 
-          {/* ── RIGHT — Photo ── */}
+          {/* ── RIGHT — Video Card ── */}
           <motion.div
             initial={{ opacity: 0, x: 32, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-<div className="float-photo relative w-full max-w-[650px] aspect-[16/10]">           {/* Outer card frame — matches About card style */}
+            <div className="float-photo relative w-full max-w-[650px] aspect-[16/10]">
+
+              {/* Outer card frame */}
               <div
                 className="absolute inset-0 rounded-[2.5rem]"
                 style={{
-                  background: dk
-                    ? "rgba(255,255,255,0.02)"
-                    : "#ffffff",
+                  background: dk ? "rgba(255,255,255,0.02)" : "#ffffff",
                   border: `1px solid ${dk ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.07)"}`,
                   boxShadow: dk
                     ? "0 24px 64px rgba(0,0,0,0.5)"
@@ -279,47 +292,104 @@ export function Hero({ darkMode, lang }: HeroProps) {
                 }}
               />
 
-              {/* Blue accent bar — top left, like About cards */}
+              {/* Blue accent bar */}
               <div
                 className="absolute top-8 left-0 w-0.5 rounded-full"
-                style={{
-                  height: 60,
-                  background: dk ? "#60a5fa" : "#2563eb",
-                  opacity: 0.6,
-                }}
+                style={{ height: 60, background: dk ? "#60a5fa" : "#2563eb", opacity: 0.6 }}
               />
 
-             {/* Photo / Video */}
-<div className="absolute inset-4 rounded-[2rem] overflow-hidden">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="w-full h-full object-cover object-top"
-    style={{
-      filter: dk ? "brightness(0.92) contrast(1.04)" : "none",
-    }}
-  >
-    <source src={heroVideo} type="video/mp4" />
-  </video>
+              {/* Media layer */}
+              <div className="absolute inset-4 rounded-[2rem] overflow-hidden">
 
-  <div
-    className="absolute inset-0"
-    style={{
-      background: dk
-        ? "linear-gradient(to top, rgba(13,17,23,0.45) 0%, transparent 55%)"
-        : "linear-gradient(to top, rgba(15,23,42,0.12) 0%, transparent 55%)",
-    }}
-  ></div>
-</div>
+                {/* Poster — always rendered, fades out when video plays */}
+                <img
+                  src={heroPoster}
+                  alt=""
+                  aria-hidden
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{
+                    zIndex: 1,
+                    opacity: videoState === "playing" ? 0 : 1,
+                    transition: "opacity 0.5s ease",
+                  }}
+                />
+
+                {/* Video — no src until user clicks */}
+                <video
+                  ref={videoRef}
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{
+                    zIndex: 2,
+                    opacity: videoState === "playing" ? 1 : 0,
+                    transition: "opacity 0.5s ease",
+                  }}
+                />
+
+                {/* Play button — idle only */}
+                {videoState === "idle" && (
+                  <button
+                    onClick={loadAndPlay}
+                    aria-label="Lancer la vidéo"
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ zIndex: 3, background: "transparent", border: "none", cursor: "pointer" }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center justify-center w-14 h-14 rounded-full"
+                      style={{
+                        background: "rgba(255,255,255,0.18)",
+                        backdropFilter: "blur(8px)",
+                        border: "1.5px solid rgba(255,255,255,0.35)",
+                        boxShadow: "0 4px 24px rgba(0,0,0,0.25)",
+                      }}
+                    >
+                      <Play size={22} fill="white" color="white" style={{ marginLeft: 3 }} />
+                    </motion.div>
+                  </button>
+                )}
+
+                {/* Loading spinner — loading only */}
+                {videoState === "loading" && (
+                  <div
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ zIndex: 3 }}
+                  >
+                    <svg
+                      className="spinner"
+                      width="36" height="36" viewBox="0 0 24 24"
+                      fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"
+                    >
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                  </div>
+                )}
+
+                {/* Gradient overlay */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    zIndex: 4,
+                    background: dk
+                      ? "linear-gradient(to top, rgba(13,17,23,0.45) 0%, transparent 55%)"
+                      : "linear-gradient(to top, rgba(15,23,42,0.12) 0%, transparent 55%)",
+                  }}
+                />
+              </div>
 
               {/* Dot pattern accent */}
               <div
                 aria-hidden
                 className="absolute -bottom-6 -right-6 w-20 h-20 pointer-events-none"
                 style={{
-                  backgroundImage: `radial-gradient(circle, ${dk ? "rgba(96,165,250,0.25)" : "rgba(37,99,235,0.2)"} 1.5px, transparent 1.5px)`,
+                  backgroundImage: `radial-gradient(circle, ${
+                    dk ? "rgba(96,165,250,0.25)" : "rgba(37,99,235,0.2)"
+                  } 1.5px, transparent 1.5px)`,
                   backgroundSize: "10px 10px",
                 }}
               />

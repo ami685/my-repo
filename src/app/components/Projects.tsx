@@ -217,28 +217,37 @@ liveDemo: "https://jumpshare.com/embed/vSYL2PzkmRI1xOFZf9wT",
     },
   },
   {
-    title: "08 — E-Tech Financement",
-    description: "Capsule vidéo pédagogique présentant le programme E-Tech Financement, ses objectifs, ses modalités et ses opportunités pour les porteurs de projets innovants.",
+    title: "08 — Capsule Vidéo : Loi de Coulomb",
+    description: "Capsule vidéo pédagogique réalisée autour de la loi de Coulomb afin d’expliquer les principes fondamentaux des interactions électrostatiques de manière simple et visuelle.",
     image:
-      "https://i.ibb.co/3YSz3p2d/map-lying-wooden-table.jpg",
-    tags: ["Innovation", "Financement", "Entrepreneuriat", "Terminé"],
-    category: "Conception e-learning",
+      "https://cdn.iai.tv/assets/Uploads/_resampled/FillWzExNjgsNDAwXQ/23-08-19.What-Newton-really-meant.webp",
+    tags: ["Physique", "Électrostatique", "Capsule vidéo", "Terminé"],
+    category: "Conception pédagogique",
     color: "blue",
-liveDemo: "https://jumpshare.com/embed/MTuoeckQvru1ZIFeN0Eg",
- details: {
+
+    liveDemo: "https://jumpshare.com/embed/kNVUnkILwnvJ4XUZeQCT",
+
+    details: {
       overview:
-        "Capsule vidéo pédagogique présentant le programme E-Tech Financement, ses objectifs, ses modalités et ses opportunités pour les porteurs de projets innovants. La capsule combine des éléments visuels attrayants, une narration claire et des exemples concrets pour expliquer les différentes étapes du programme et encourager les entrepreneurs à y participer.",
+        "Cette capsule vidéo pédagogique présente la loi de Coulomb et ses applications dans le domaine de l’électrostatique. Elle combine une approche visuelle dynamique, des explications simplifiées et des exemples illustratifs afin de faciliter la compréhension des notions scientifiques par les apprenants.",
+
       features: [
-        "Présentation claire du dispositif E-Tech",
-        "Design visuel moderne et engageant",
-        "Accessibilité pour différents profils",
-        "Structuration pédagogique (problème → solution → opportunités)",
+        "Explication simplifiée de la loi de Coulomb",
+        "Animation et visuels pédagogiques engageants",
+        "Approche adaptée aux apprenants débutants",
+        "Structuration pédagogique claire et progressive",
       ],
-      architecture: ["CoI", "ADDIE", "UX learning"],
-      challenges: ["Rythme de publication", "Engagement durable"],
-      outcome: "Terminé",
+
+      architecture: ["ADDIE", "Pédagogie active", "UX Learning"],
+
+      challenges: [
+        "Simplification des notions scientifiques",
+        "Maintien de l’attention des apprenants",
+      ],
+
+      outcome: "Projet terminé",
     },
-  },
+},
   {
     title: "09 — Système de gestion d’apprentissage en ligne (LMS) ",
 
